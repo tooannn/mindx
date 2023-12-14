@@ -40,10 +40,10 @@ function QuoteApp() {
       <button onClick={handleRandomQuote}>Random Quote</button>
 
       {selectedQuote && (
-        <div>
+        <div className="selected-author-container" >
           <p>{selectedQuote.content}</p>
           <p>- {selectedQuote.author}</p>
-          <p>Tags: {selectedQuote.tags.join(", ")}</p>
+          <p className="tags-container" >Tags: {selectedQuote.tags.join(", ")}</p>
         </div>
       )}
 
@@ -56,12 +56,12 @@ function QuoteApp() {
       ))}
 
       {selectedAuthor && (
-        <div>
+        <div className="selected-author-container">
           <h3>{selectedAuthor[0].author}</h3>
           {selectedAuthor.map((quote) => (
-            <div key={quote._id}>
+            <div key={quote._id} className="quote-container">
               <p>{quote.content}</p>
-              <p>Tags: {quote.tags.join(", ")}</p>
+              <p className="tags-container">Tags: {quote.tags.join(", ")}</p>
             </div>
           ))}
         </div>
